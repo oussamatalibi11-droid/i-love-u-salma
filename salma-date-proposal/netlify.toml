@@ -1,0 +1,13 @@
+# Netlify config for a static Next.js export.
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Single-page fallback (assets are still served directly when they exist).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
